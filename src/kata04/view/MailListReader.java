@@ -11,8 +11,8 @@ import kata04.model.Mail;
 
 
 public class MailListReader {
-    public static List<Mail> read(String fileName) throws FileNotFoundException, IOException{
-        List<Mail> mailList = new ArrayList<>();
+   public static List<String> read(String fileName) throws FileNotFoundException, IOException{
+        List<String> mailList = new ArrayList<>();
         BufferedReader reader = 
                 new BufferedReader(new FileReader(new File(fileName)));
         String mail = new String();
@@ -20,7 +20,7 @@ public class MailListReader {
             if(!mail.contains("@")){
                 continue;
             }else{
-                mailList.add(new Mail(mail));
+                mailList.add(mail);
             }
         }
         return mailList;
